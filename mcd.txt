@@ -1,0 +1,24 @@
+Le Modèle Conceptuel de Données (MCD) pour une application de gestion des candidatures implique la représentation des entités et de leurs relations dans le contexte du processus de recrutement. 
+
+#Entités principales :
+#Candidat :
+Attributs : ID Candidat (clé primaire), Nom, Prénom, Adresse, Email, Numéro de téléphone, CV (lien vers le fichier), etc.
+
+#Offre d'emploi :
+Attributs : ID Offre (clé primaire), Titre de l'offre, Description, Date de publication, Date limite de candidature, Salaire proposé, etc.
+
+#Recruteur :
+Attributs : ID Recruteur (clé primaire), Nom de l'entreprise, Nom du recruteur, Adresse email, Numéro de téléphone, etc.
+
+#État de candidature :
+Attributs : ID État (clé primaire), Libellé de l'état (par exemple : "En attente", "Sélectionné pour entretien", "Rejeté", etc.)
+
+#Relations :
+#Postulation :
+Une candidature est liée à un candidat et à une offre d'emploi.
+Attributs : ID Postulation (clé primaire), ID Candidat (clé étrangère référençant Candidat), ID Offre (clé étrangère référençant Offre d'emploi), Date de postulation, etc.
+
+#Suivi de candidature :
+Une candidature peut avoir plusieurs états au fil du processus de recrutement.
+Attributs : ID Suivi (clé primaire), ID Postulation (clé étrangère référençant Postulation), ID État (clé étrangère référençant État de candidature), Date de modification de l'état, Remarques, etc.
+Ceci est un schéma de base pour une application de gestion des candidatures. En fonction des besoins spécifiques de votre application, vous pourriez ajouter d'autres entités (comme des compétences, des évaluations, des entretiens, etc.) ou raffiner davantage les attributs et les relations.
